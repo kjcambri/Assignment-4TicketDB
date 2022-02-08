@@ -1,0 +1,125 @@
+version: 2
+
+sources:
+    - name: TicketDB
+      description: A clone of the ticket database
+      database: ads-507-assignment-4
+      schema: TicketDB
+      tables:
+        - name: category
+          description: Raw category data
+          columns:
+            - name: cat_id
+              description: Primary key for category.
+              tests:
+                - unique
+                - not_null
+
+        - name: date
+          description: Raw date data
+          columns:
+            - name: date_id
+              description: Primary key for date.
+              tests:
+                - unique
+                - not_null
+                
+        - name: event
+          description: Raw event data
+          columns:
+            - name: event_id
+              description: Primary key for event.
+              tests:
+                - unique
+                - not_null
+            - name: venue_id
+              description: Foreign key for venue.
+              tests:
+                - unique
+                - not_null
+            - name: cat_id
+              description: Foreign key for category.
+              tests:
+                - unique
+                - not_null
+            - name: date_id
+              description: Foreign key for date.
+              tests:
+                - unique
+                - not_null
+
+        - name: listing
+          description: Raw listing data
+          columns:
+            - name: list_id
+              description: Primary key for event.
+              tests:
+                - unique
+                - not_null
+            - name: seller_id
+              description: Foreign key for users.
+              tests:
+                - unique
+                - not_null
+            - name: event_id
+              description: Foreign key for event.
+              tests:
+                - unique
+                - not_null
+            - name: date_id
+              description: Foreign key for date.
+              tests:
+                - unique
+                - not_null
+
+        - name: sales
+          description: Raw event data
+          columns:
+            - name: sales_id
+              description: Primary key for sales.
+              tests:
+                - unique
+                - not_null
+            - name: list_id
+              description: Foreign key for listing.
+              tests:
+                - unique
+                - not_null
+            - name: seller_id
+              description: Foreign key for users.
+              tests:
+                - unique
+                - not_null
+            - name: buyer_id
+              description: Foreign key for users.
+              tests:
+                - unique
+                - not_null
+            - name: event_id
+              description: Foreign key for events.
+              tests:
+                - unique
+                - not_null
+            - name: date_id
+              description: Foreign key for date.
+              tests:
+                - unique
+                - not_null
+
+        - name: users
+          description: Raw users data
+          columns:
+            - name: user_id
+              description: Primary key for users.
+              tests:
+                - unique
+                - not_null
+
+        - name: venue
+          description: Raw event data
+          columns:
+            - name: venue_id
+              description: Primary key for venue.
+              tests:
+                - unique
+                - not_null

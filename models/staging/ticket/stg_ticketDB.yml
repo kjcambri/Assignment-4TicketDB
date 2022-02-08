@@ -1,0 +1,23 @@
+version: 2
+
+models:
+    - name: stg_category
+      description: '{{ doc("category_info") }}'
+
+    - name: stg_date
+      description: '{{ doc("date_info") }}'
+
+    - name: stg_event
+      description: '{{ doc("event_info") }}'
+
+    - name: stg_sales
+      description: '{{ doc("sales_info") }}'
+
+    - name: stg_users
+      description: '{{ doc("users_info") }}'
+
+    - name: stg_venue
+      description: '{{ doc("venue_info") }}'
+
+    - name: stg_listing
+      description: '{{ doc("listing_info") }}'
